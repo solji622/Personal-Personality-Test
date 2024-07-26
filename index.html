@@ -8,24 +8,29 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="qna.css">
+    <link rel="stylesheet" href="result.css">
 </head>
 <body>
     <div class="container">
         <section id="main" class="mx-auto pb-5">
-            <div class="title pt-5 pb-5">나에게 맞는 학과 찾아보기</div>
+            <div class="title pt-5 pb-5">나의 성격 온도는?</div>
             <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
-                <img src="image/성일로고.webp" alt="성일로고" class="img-fluid" width="50%">
+                <!-- <img src="image/성일로고.webp" alt="성일로고" class="img-fluid" width="50%"> -->
             </div>
             <p class="desc pt-5 pb-3">
-                성일정보고등학교의 학과 중
-                <br> 나와 맞는 학과는 어디일까?
+                내 유형은 몇도일까?
             </p>
             <button type="button" class="btn btn-outline-dark" 
             onclick="begin()">START!</button>
         </section>
     
         <section id="qna">
-            <div class="qBox">
+            <div class="status mx-auto">
+                <div class="statusBar">
+
+                </div>
+            </div>
+            <div class="qBox mt-5 mb-5 mx-auto">
 
             </div>
 
@@ -35,7 +40,20 @@
         </section>
     
         <section id="result">
-            
+            <div class="title pt-5 pb-5">당신의 온도는...</div>
+            <div class="resultName">
+
+            </div>
+            <div id="resImg" class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+                
+            </div>
+            <div class="resultDesc">
+
+            </div>
+            <p class="desc pt-5 pb-3">
+                님은 이런 유형입니다!
+            </p>
+            <button type="button">공유하기</button>
         </section>
     </div>
 

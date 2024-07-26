@@ -1,3 +1,43 @@
+
 #qna {
     display: none;
+    margin-top: 250px;
+}
+
+.qBox {
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18pt;
+    height: 50px;
+    line-height: 50px;
+    width: 90%;
+}
+
+.answerList {
+    background-color: whitesmoke;
+    display: block;
+    border-radius: 10px;
+    font-size: 15pt;
+    width: 90%;
+    height: 50px;
+    border: none;
+    margin: 0 auto 30px auto;
+}
+
+.answerList:hover, .answerList:focus{
+    background-color: lightgrey;
+}
+
+.status{
+    height: 20px;
+    width: 90%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.statusBar {
+    height: 100%;
+    background-color: lightskyblue;
+    border-radius: 10px;
 }
