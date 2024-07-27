@@ -1,3 +1,22 @@
 #result {
     display: none;
+    background-color: #fff;
+    width: 90%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 100px;
+    box-shadow: 0 5px 10px 5px rgb(198, 217, 241);
+    padding: 0 50px;
+}
+
+.resultDesc {
+    font-size: 15pt;
+}
+
+#resultImg {
+    width: 50%;
+}
+
+.resultName {
+    font-size: 25px;
 }

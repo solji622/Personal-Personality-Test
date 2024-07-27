@@ -2,40 +2,31 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector('#result');
 const endpoint = 9;
-const select = [];
+const select = [0, 0, 0, 0, 0];
+
+
 
 function calResult() {
-    var pointArray = [
-        {name: 'cool', value : 0, key : 0},
-        {name: 'warm', value : 0, key : 1},
-        {name: 'mild', value : 0, key : 2},
-        {name: 'fiery', value : 0, key : 3},
-        {name: 'frosty', value : 0, key : 4},
-    ]
-    
-    for (let i = 0; i < endpoint; i++) {
-        var target = qnaList[i].a[select[i]];
-        for (let j = 0; j < target.type.length; j++) {
-            for (let k = 0; k < pointArray.length; k++) {
-                if (target.type[j] === pointArray[k].name) {
-                    pointArray[k].value += 1;
-                }
-            }
-        }
-    }
+    var result = select.indexOf(Math.max(...select));
+    // ...  -> 전개구문 선택한 배열을 펼치게 함
+    return result;
+}
 
-    var resultArray = pointArray.sort(function (a,b) {
-        if (a.value > b.value) {
-            return -1;
-        } else if (a.value < b.value) {
-            return 1;
-        } else {
-            return 0;
-        }
-    });
-    
-    let resultWord = resultArray[0].key;
-    return resultWord;
+function setResult() {
+    let point = calResult();
+    const resultName = document.querySelector('.resultName');
+    resultName.innerHTML = infoList[point].name;
+
+    var resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
+    var imgURL = 'image/image-' + point + '.png';
+    resultImg.src = imgURL;
+    resultImg.alt = point;
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = infoList[point].desc;
 }
 
 function goResult() {
@@ -49,8 +40,7 @@ function goResult() {
             result.style.display = "block";
         }, 450)
     })
-
-    calResult();
+    setResult();
 }
 
 function addAns(answerText, qIdx, idx) {
@@ -70,7 +60,10 @@ function addAns(answerText, qIdx, idx) {
             children[i].style.animation = "fadeOut 0.5s"
         }
         setTimeout(() =>{
-            select[qIdx] = idx;
+            var target = qnaList[qIdx].a[idx].type;
+            for (let i = 0; i < target.length; i++) {
+                select[target[i]] += 1;
+            }
             for(let i = 0; i < children.length; i++) {
                 children[i].style.display = 'none';
             }
@@ -110,3 +103,21 @@ function begin() {
         goNext(qIdx);
     }, 500);
 }
+
+// 저장하기를 눌러도 저장하기가 되지 않는다... 원인을 찾아오도록
+
+function downloadImg() {
+    document.addEventListener("DOMContentLoaded", function() {    
+        var btn = document.querySelector('.download');
+    
+        btn.addEventListener("click", function() {
+            html2canvas(document.querySelector(".capture")).then(function(canvas) {
+                var el = document.createElement("a");
+                el.href = canvas.toDataURL("image/jpeg");
+                el.download = '이미지.jpg'; // 다운로드 할 파일명 설정
+                el.click();
+            });
+        });
+    });
+}
+
