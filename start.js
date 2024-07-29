@@ -1,7 +1,7 @@
 const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector('#result');
-const endpoint = 9;
+const endpoint = 12;
 const select = [0, 0, 0, 0, 0];
 
 

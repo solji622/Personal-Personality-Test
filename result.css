@@ -20,3 +20,9 @@
 .resultName {
     font-size: 25px;
 }
+
+#result p {
+    padding-top: 30px;
+    color: gray;
+}
+
