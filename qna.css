@@ -1,14 +1,15 @@
 
 #qna {
     display: none;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .qBox {
     background-color: rgb(218, 245, 255);
     text-align: center;
     border-radius: 10px;
-    font-size: 18pt;
+    font-size: 13pt;
+    font-weight: bold;
     height: 50px;
     line-height: 50px;
     width: 90%;
@@ -18,7 +19,7 @@
     background-color: whitesmoke;
     display: block;
     border-radius: 10px;
-    font-size: 15pt;
+    font-size: 11pt;
     width: 90%;
     height: 50px;
     border: none;
