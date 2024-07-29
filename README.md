@@ -9,7 +9,7 @@
 </br>
 
 #### Q&A
-![image](https://github.com/user-attachments/assets/0f9951a9-0ad1-4155-b0c4-3b582be63b88)
+![image](https://github.com/user-attachments/assets/3d3f1eb5-ae8f-4fb1-bca5-16bc61f12dda)
 
 </br>
 </br>
