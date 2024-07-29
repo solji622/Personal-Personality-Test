@@ -104,20 +104,31 @@ function begin() {
     }, 500);
 }
 
-// 저장하기를 눌러도 저장하기가 되지 않는다... 원인을 찾아오도록
 
-function downloadImg() {
-    document.addEventListener("DOMContentLoaded", function() {    
-        var btn = document.querySelector('.download');
+// function downloadImg() {
+//     document.addEventListener("DOMContentLoaded", function() {    
+//         var btn = document.querySelector('.download');
     
-        btn.addEventListener("click", function() {
-            html2canvas(document.querySelector(".capture")).then(function(canvas) {
-                var el = document.createElement("a");
-                el.href = canvas.toDataURL("image/jpeg");
-                el.download = '이미지.jpg'; // 다운로드 할 파일명 설정
-                el.click();
-            });
-        });
-    });
-}
+//         btn.addEventListener("click", function() {
+//             html2canvas(document.querySelector(".capture")).then(function(canvas) {
+//                 var el = document.createElement("a");
+//                 el.href = canvas.toDataURL("image/jpeg");
+//                 el.download = '이미지.jpg'; // 다운로드 할 파일명 설정
+//                 el.click();
+//             });
+//         });
+//     });
+// }
+
+function clip(){
+    var url = '';
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = 'window.location.href';
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("링크가 복사되었습니다 😊")
+ };
 
