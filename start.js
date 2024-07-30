@@ -121,7 +121,7 @@ function begin() {
 // }
 
 function clip(){
-    var url = '';
+    var url = 'https://personaltest22.netlify.app/';
     var textarea = document.createElement("textarea");
     document.body.appendChild(textarea);
     url = 'window.location.href';
