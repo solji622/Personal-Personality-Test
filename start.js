@@ -124,7 +124,6 @@ function clip(){
     var url = 'https://personaltest22.netlify.app/';
     var textarea = document.createElement("textarea");
     document.body.appendChild(textarea);
-    url = 'window.location.href';
     textarea.value = url;
     textarea.select();
     document.execCommand("copy");
